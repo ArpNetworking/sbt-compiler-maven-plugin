@@ -23,7 +23,7 @@ Standard Maven Compiler Plugin must be turned off and this plugin must be added.
             </plugin>
 
             <plugin>
-                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <groupId>com.arpnetworking.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <executions>
@@ -65,7 +65,7 @@ b) Java and Scala separated (Java sources in `src/main/java` and `src/test/java`
     <build>
         <plugins>
             <plugin>
-                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <groupId>com.arpnetworking.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <executions>
@@ -138,7 +138,7 @@ a) can be specified as plugin's configuration parameter:
     <build>
         <plugins>
             <plugin>
-                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <groupId>com.arpnetworking.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <configuration>
@@ -191,7 +191,7 @@ a) with plugin's configuration parameter
     <build>
         <plugins>
             <plugin>
-                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <groupId>com.arpnetworking.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <configuration>
@@ -225,7 +225,7 @@ a) Scalac and Javac options
     <build>
         <plugins>
             <plugin>
-                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <groupId>com.arpnetworking.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <configuration>
@@ -259,7 +259,7 @@ or in javacOptions and scalacOptions plugin's configuration parameters (more ver
     <build>
         <plugins>
             <plugin>
-                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <groupId>com.arpnetworking.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <configuration>
@@ -279,7 +279,7 @@ c) source includes/excludes
     <build>
         <plugins>
             <plugin>
-                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <groupId>com.arpnetworking.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <configuration>

@@ -37,7 +37,7 @@ Add `sbtVersion` parameter with value `0.13` (or any value starting with `0.13.`
         <plugins>
             ...
             <plugin>
-                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <groupId>com.arpnetworking.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <configuration>
@@ -68,7 +68,7 @@ of the value of `sbtVersion` plugin configuration parameter or `sbt.version` pro
         <plugins>
             ...
             <plugin>
-                <groupId>com.google.code.sbt-compiler-maven-plugin</groupId>
+                <groupId>com.arpnetworking.code.sbt-compiler-maven-plugin</groupId>
                 <artifactId>sbt-compiler-maven-plugin</artifactId>
                 <version>${project.version}</version>
                 <dependencies>
