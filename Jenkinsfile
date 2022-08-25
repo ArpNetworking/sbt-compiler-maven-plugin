@@ -30,7 +30,7 @@ pipeline {
       when { buildingTag(); not { changeRequest() }  }
       steps {
         script {
-          target = "deploy -P release --settings settings.xml"
+          target = "deploy -P sonatype-oss-release --settings settings.xml"
         }
         sh 'gpg --batch --import arpnetworking.key'
       }

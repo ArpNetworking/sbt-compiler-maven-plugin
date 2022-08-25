@@ -1,7 +1,12 @@
 <settings>
   <servers>
     <server>
-      <id>ossrh</id>
+      <id>sonatype-nexus</id>
+      <username>${env.OSSRH_USER}</username>
+      <password>${env.OSSRH_PASS}</password>
+    </server>
+    <server>
+      <id>sonatype-nexus-staging</id>
       <username>${env.OSSRH_USER}</username>
       <password>${env.OSSRH_PASS}</password>
     </server>
