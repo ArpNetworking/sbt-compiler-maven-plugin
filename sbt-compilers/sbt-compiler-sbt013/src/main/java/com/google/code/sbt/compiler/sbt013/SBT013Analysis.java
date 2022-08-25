@@ -20,6 +20,10 @@ package com.google.code.sbt.compiler.sbt013;
 import java.io.File;
 import java.util.Set;
 
+import sbt.CompileSetup;
+import scala.Function0;
+import scala.Function1;
+import scala.Tuple2;
 import scala.collection.JavaConversions;
 
 import sbt.inc.AnalysisStore;
@@ -30,6 +34,8 @@ import sbt.inc.Stamps;
 import com.typesafe.zinc.Compiler;
 
 import com.google.code.sbt.compiler.api.Analysis;
+import scala.runtime.AbstractFunction0;
+import scala.runtime.AbstractFunction1;
 
 /**
  * {@link Analysis} wrapper around
@@ -54,6 +60,20 @@ public class SBT013Analysis
         this.analysis = analysis;
     }
 
+    private Function1<Tuple2<sbt.inc.Analysis, CompileSetup>, CompileSetup> map = new AbstractFunction1<Tuple2<sbt.inc.Analysis, CompileSetup>, CompileSetup>() {
+        @Override
+        public CompileSetup apply(Tuple2<sbt.inc.Analysis, CompileSetup> v1) {
+            return v1._2;
+        }
+    };
+
+    private Function0<CompileSetup> none = new AbstractFunction0<CompileSetup>() {
+        @Override
+        public CompileSetup apply() {
+            return null;
+        }
+    };
+
     /**
      * {@inheritDoc}
      */
@@ -67,7 +87,10 @@ public class SBT013Analysis
             stamps = null;
         }
         AnalysisStore analysisStore = Compiler.analysisStore( analysisCacheFile );
-        analysisStore.set( analysis, analysisStore.get().get()._2 /* compileSetup */ );
+        CompileSetup cs = analysisStore.get().map( map /* compileSetup */ ).getOrElse(none);
+        if ( cs != null ) {
+            analysisStore.set( analysis, cs );
+        }
     }
 
     /**
